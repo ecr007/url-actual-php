@@ -1,7 +1,17 @@
-function getCurrentUrl(){  
-	$domain = $_SERVER['HTTP_HOST']; //Nombre del dominion  
-
-	$url = "http://" . $domain . $_SERVER['REQUEST_URI']; // Direccion despus del dominio URI
-
-	return $url;	  
+function dameURL(){
+	$url="http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+	
+	return $url;
 }
+
+/*
+*********************************************************************
+|                                                                   |
+|$_SERVER['HTTP_HOST']: Sirve para obtener el nombre del dominio.   | 
+|$_SERVER['SERVER_PORT']: Sirve para obtener el puerto.             |
+|$_SERVER['REQUEST_URI']: Sirve para obtener la URI.                |
+|                                                                   |
+*********************************************************************
+*/
+
+echo dameURL();
